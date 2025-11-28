@@ -1,0 +1,74 @@
+:root{
+  --brand-primary: #f97316;
+  --brand-primary-dark: #ea580c;
+  --brand-dark: #1f2937;
+  --brand-light: #f9fafb;
+  --max-width: 1100px;
+  --gap: 1rem;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.nav-spacer {
+  height: 80px; /* same as navbar height */
+}
+
+
+/* Reset & base */
+* { box-sizing: border-box; }
+html,body,#root { height:100%; }
+body {
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background:#ffffff;
+  color:#111827;
+}
+
+/* Container */
+.container { max-width:var(--max-width); margin:0 auto; padding:0 1rem; }
+
+/* Grid helpers */
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); }
+.grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--gap); }
+@media (max-width:900px) { .grid-3, .grid-2 { grid-template-columns:1fr; } }
+
+/* Card */
+.card {
+  background:#fff;
+  padding:1.25rem;
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.06);
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+
+/* Headings & utility */
+h1,h2,h3 { margin:0 0 .35rem 0; font-family:'Poppins', sans-serif; }
+p { margin:0; color:#374151; }
+
+/* Buttons */
+.btn { display:inline-block; background:var(--brand-primary); color:#fff; padding:.5rem .9rem; border-radius:10px; font-weight:600; cursor:pointer; }
+
+/* Animation classes:
+   Visible by default so UI never disappears if JS fails.
+   Use .will-animate to indicate elements that should animate,
+   and .is-visible will be added by the observer JS.
+*/
+.animate-on-scroll { opacity: 1; transform: translateY(0); transition: opacity .45s ease-out, transform .45s ease-out; }
+.will-animate { opacity: 0; transform: translateY(12px); }
+.is-visible { opacity: 1; transform: translateY(0); transition: opacity .45s ease-out, transform .45s ease-out; }
+
+/* Accessibility focus */
+[role="button"]:focus, button:focus, a:focus { outline: 3px solid rgba(249,115,22,0.12); outline-offset: 3px; }
+
+/* Section padding */
+.section-padding { padding: 2.5rem 0; }

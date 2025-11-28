@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AORBO TREKS - Discover Your Adventure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#f97316',
+                        'brand-primary-dark': '#ea580c',
+                        'brand-dark': '#1f2937',
+                        'brand-light': '#f9fafb',
+                    },
+                    fontFamily: {
+                        display: ['Poppins', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                       'text': '0px 2px 5px rgba(0,0,0,0.5)',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInUpSuperFast: {
+                             '0%': { opacity: '0', transform: 'translateY(10px)' },
+                             '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(-3deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(-3deg)' },
+                        }
+                    },
+                    animation: {
+                        'fadeInUp': 'fadeInUp 0.5s ease-out forwards',
+                        'fadeInUpFast': 'fadeInUp 0.3s ease-out forwards',
+                        'fadeInUpSuperFast': 'fadeInUpSuperFast 0.2s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+     <style>
+        html { scroll-behavior: smooth; }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<!-- <body>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body> -->
+<body>
+  <div id="root"></div>
+
+  <!-- Keep only one module script for your app entry -->
+  <script type="module" src="./index.tsx"></script>
+
+  <!-- Remove the duplicate module import (/index.tsx) -->
+  <!-- <script type="module" src="/index.tsx"></script> -->
+</body>
+
+</html>
